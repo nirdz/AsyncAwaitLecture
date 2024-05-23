@@ -16,7 +16,7 @@ async function getSomeData() {
     console.log(2);
     let data1 = await fetch('/something/user.json');
     console.log(5);
-    let data2 = await  fetch('/something/item.json');
+    let data2 = await fetch('/something/item.json');
     console.log(6);
 
     return [data1, data2]
@@ -26,7 +26,9 @@ async function getSomeData() {
 // This function imitates fetching data from external server
 async function fetch(url){
     // This represents the time we wait for the server to return an answer
+    console.log(`"Strating fetching data from ${url}`);
     await sleep(2000)
+    console.log(`"Finished fetching data from ${url}`);
     return {
         "status": 200,
         "data": "data"
